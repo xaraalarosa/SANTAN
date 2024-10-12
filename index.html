@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .carousel-item {
+            height: 400px;
+        }
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-area, .birthday-area, .reminders-area {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="image3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mt-3">
+        <li class="nav-item">
+            <a class="nav-link active" href="#tab1" data-toggle="tab">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tab2" data-toggle="tab">EduHUB</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tab3" data-toggle="tab">HISTORY</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tab4" data-toggle="tab">TOOLS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#tab5" data-toggle="tab">MORE</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab1"><!-- News Area -->
+            <div class="container news-area">
+                <h3>Announcements</h3>
+                <ul>
+                    <li>Announcement 1</li>
+                    <li>Announcement 2</li>
+                    <li>Announcement 3</li>
+                </ul>
+            </div>
+            
+            <!-- Birthday Announcement Area -->
+            <div class="container birthday-area">
+                <h3>Birthday Announcements</h3>
+                <ul>
+                    <li>John Doe - October 15</li>
+                    <li>Jane Smith - October 20</li>
+                </ul>
+            </div>
+            
+            <!-- Task Reminders -->
+            <div class="container reminders-area">
+                <h3>Task Reminders</h3>
+                <ul>
+                    <li>Complete project report by October 10</li>
+                    <li>Submit expenses by October 12</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab2"><div class="container">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Reviewer Page</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <style>
+                body {
+                    margin: 20px;
+                }
+                .subject-button {
+                    margin: 10px;
+                    width: 150px;
+                }
+                .lesson-selection {
+                    display: none;
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+        <div class="container">
+            <h1>Reviewer Page</h1>
+
+            <h3>Select a Subject</h3>
+            <div class="d-flex flex-wrap">
+                <button class="btn btn-primary subject-button" id="mathButton">
+                    <i class="fas fa-calculator"></i> Mathematics
+                </button>
+                <button class="btn btn-success subject-button" id="scienceButton">
+                    <i class="fas fa-flask"></i> Science
+                </button>
+                <button class="btn btn-info subject-button" id="historyButton">
+                    <i class="fas fa-book"></i> History
+                </button>
+                <button class="btn btn-warning subject-button" id="literatureButton">
+                    <i class="fas fa-feather-alt"></i> Literature
+                </button>
+                <button class="btn btn-danger subject-button" id="artButton">
+                    <i class="fas fa-paint-brush"></i> Art
+                </button>
+                <button class="btn btn-secondary subject-button" id="musicButton">
+                    <i class="fas fa-music"></i> Music
+                </button>
+                <button class="btn btn-dark subject-button" id="techButton">
+                    <i class="fas fa-laptop"></i> Technology
+                </button>
+            </div>
+
+            <div class="lesson-selection" id="lessonSelection">
+                <h4>Select Quarter and Lesson</h4>
+                <select class="form-control" id="quarterSelect">
+                    <option value="">Select Quarter...</option>
+                    <option value="Q1">Quarter 1</option>
+                    <option value="Q2">Quarter 2</option>
+                    <option value="Q3">Quarter 3</option>
+                    <option value="Q4">Quarter 4</option>
+                </select>
+                <select class="form-control mt-2" id="lessonSelect">
+                    <option value="">Select Lesson...</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <h3>Selected Subject Details</h3>
+            <div id="subjectDetails" class="mt-3">
+                <p>Please select a subject to see the details.</p>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            const lessons = {
+                'Mathematics': {
+                    'Q1': [
+                        { title: 'Lesson 1', content: 'Introduction to Algebra' },
+                        { title: 'Lesson 2', content: 'Fractions and Decimals' },
+                        { title: 'Lesson 3', content: 'Basic Geometry' }
+                    ],
+                    'Q2': [
+                        { title: 'Lesson 4', content: 'Equations and Inequalities' },
+                        { title: 'Lesson 5', content: 'Statistics Basics' },
+                        { title: 'Lesson 6', content: 'Introduction to Functions' }
+                    ],
+                    // ...add other quarters and lessons
+                },
+                // ...add other subjects similarly
+            };
+
+            $('.subject-button').click(function() {
+                const selectedSubject = $(this).text().trim();
+                $('#subjectDetails').html(`<p>${selectedSubject} details will be shown here.</p>`);
+                $('#lessonSelection').show();
+
+                // Reset lesson selections
+                $('#quarterSelect').val('');
+                $('#lessonSelect').empty().append('<option value="">Select Lesson...</option>');
+
+                // Store selected subject
+                $('#quarterSelect').data('subject', selectedSubject);
+            });
+
+            $('#quarterSelect').change(function() {
+                const selectedQuarter = $(this).val();
+                const subject = $(this).data('subject');
+
+                if (selectedQuarter && subject) {
+                    $('#lessonSelect').empty().append('<option value="">Select Lesson...</option>');
+                    const availableLessons = lessons[subject][selectedQuarter];
+                    availableLessons.forEach((lesson, index) => {
+                        $('#lessonSelect').append(`<option value="${index}">${lesson.title}</option>`);
+                    });
+                }
+            });
+
+            $('#lessonSelect').change(function() {
+                const lessonIndex = $(this).val();
+                const subject = $('#quarterSelect').data('subject');
+                const selectedQuarter = $('#quarterSelect').val();
+
+                if (lessonIndex) {
+                    const lesson = lessons[subject][selectedQuarter][lessonIndex];
+                    $('#subjectDetails').html(`<h4>${lesson.title}</h4><p>${lesson.content}</p>`);
+                }
+            });
+        </script>
+        </div>
+    </div>
+        <div class="tab-pane fade" id="tab3">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>History Page</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <style>
+                    body {
+                        margin: 20px;
+                    }
+                    .carousel-item img {
+                        max-height: 400px;
+                        width: auto;
+                        margin: auto;
+                    }
+                </style>
+            </head>
+            <body>
+            
+            <div class="container">
+                <h1>Historical Events</h1>
+            
+                <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/800x400?text=Event+1" class="d-block w-100" alt="Event 1">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Event 1 Title</h5>
+                                <p>Description of Event 1.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/800x400?text=Event+2" class="d-block w-100" alt="Event 2">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Event 2 Title</h5>
+                                <p>Description of Event 2.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/800x400?text=Event+3" class="d-block w-100" alt="Event 3">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Event 3 Title</h5>
+                                <p>Description of Event 3.</p>
+                            </div>
+                        </div>
+                        <!-- Add more carousel items as needed -->
+                    </div>
+                    <a class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </div>
+        <div class="tab-pane fade" id="tab4">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Tools Page</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <style>
+                    body {
+                        margin: 20px;
+                    }
+                    .tool-section {
+                        margin-top: 30px;
+                    }
+                </style>
+            </head>
+            <body>
+            
+            <div class="container">
+                <h1>Tools Page</h1>
+            
+                <div class="tool-section">
+                    <h3>Grade Calculator</h3>
+                    <form id="gradeCalculator">
+                        <div class="form-group">
+                            <label for="totalPoints">Total Points:</label>
+                            <input type="number" class="form-control" id="totalPoints" placeholder="Enter total points" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="earnedPoints">Earned Points:</label>
+                            <input type="number" class="form-control" id="earnedPoints" placeholder="Enter earned points" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate Grade</button>
+                    </form>
+                    <div id="gradeResult" class="mt-3"></div>
+                </div>
+            
+                <div class="tool-section">
+                    <h3>Calculator</h3>
+                    <input type="text" id="calculatorInput" class="form-control" placeholder="0" disabled>
+                    <div class="btn-group d-flex mt-2" role="group">
+                        <button class="btn btn-light" onclick="appendToCalculator('1')">1</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('2')">2</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('3')">3</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('+')">+</button>
+                    </div>
+                    <div class="btn-group d-flex mt-2" role="group">
+                        <button class="btn btn-light" onclick="appendToCalculator('4')">4</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('5')">5</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('6')">6</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('-')">-</button>
+                    </div>
+                    <div class="btn-group d-flex mt-2" role="group">
+                        <button class="btn btn-light" onclick="appendToCalculator('7')">7</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('8')">8</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('9')">9</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('*')">*</button>
+                    </div>
+                    <div class="btn-group d-flex mt-2" role="group">
+                        <button class="btn btn-light" onclick="appendToCalculator('0')">0</button>
+                        <button class="btn btn-light" onclick="calculateResult()">=</button>
+                        <button class="btn btn-light" onclick="appendToCalculator('/')">/</button>
+                        <button class="btn btn-light" onclick="clearCalculator()">C</button>
+                    </div>
+                </div>
+            
+                <div class="tool-section">
+                    <h3>Currency Converter</h3>
+                    <form id="currencyConverter">
+                        <div class="form-group">
+                            <label for="amount">Amount (USD):</label>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter amount in USD" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Convert to:</label>
+                            <select class="form-control" id="currency">
+                                <option value="EUR">Euro</option>
+                                <option value="GBP">British Pound</option>
+                                <option value="JPY">Japanese Yen</option>
+                                <option value="AUD">Australian Dollar</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Convert</button>
+                    </form>
+                    <div id="currencyResult" class="mt-3"></div>
+                </div>
+            
+                <div class="tool-section">
+                    <h3>Unit Converter</h3>
+                    <form id="unitConverter">
+                        <div class="form-group">
+                            <label for="value">Value:</label>
+                            <input type="number" class="form-control" id="value" placeholder="Enter value" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="unitType">Convert From:</label>
+                            <select class="form-control" id="unitType">
+                                <option value="meters">Meters</option>
+                                <option value="kilometers">Kilometers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="convertTo">Convert To:</label>
+                            <select class="form-control" id="convertTo">
+                                <option value="meters">Meters</option>
+                                <option value="kilometers">Kilometers</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Convert</button>
+                    </form>
+                    <div id="unitResult" class="mt-3"></div>
+                </div>
+            
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script>
+                // Grade Calculator
+                $('#gradeCalculator').submit(function(event) {
+                    event.preventDefault();
+                    const totalPoints = parseFloat($('#totalPoints').val());
+                    const earnedPoints = parseFloat($('#earnedPoints').val());
+                    const grade = (earnedPoints / totalPoints) * 100;
+                    $('#gradeResult').html(`<p>Your grade is: ${grade.toFixed(2)}%</p>`);
+                });
+            
+                // Calculator
+                let calculatorInput = '';
+                function appendToCalculator(value) {
+                    calculatorInput += value;
+                    $('#calculatorInput').val(calculatorInput);
+                }
+                function calculateResult() {
+                    try {
+                        const result = eval(calculatorInput);
+                        $('#calculatorInput').val(result);
+                        calculatorInput = result.toString();
+                    } catch (error) {
+                        $('#calculatorInput').val('Error');
+                        calculatorInput = '';
+                    }
+                }
+                function clearCalculator() {
+                    calculatorInput = '';
+                    $('#calculatorInput').val('0');
+                }
+            
+                // Currency Converter (Static Example)
+                $('#currencyConverter').submit(function(event) {
+                    event.preventDefault();
+                    const amount = parseFloat($('#amount').val());
+                    const currency = $('#currency').val();
+                    let conversionRate = 1;
+            
+                    switch (currency) {
+                        case 'EUR':
+                            conversionRate = 0.85;
+                            break;
+                        case 'GBP':
+                            conversionRate = 0.75;
+                            break;
+                        case 'JPY':
+                            conversionRate = 110.0;
+                            break;
+                        case 'AUD':
+                            conversionRate = 1.35;
+                            break;
+                    }
+            
+                    const convertedAmount = amount * conversionRate;
+                    $('#currencyResult').html(`<p>${amount} USD is approximately ${convertedAmount.toFixed(2)} ${currency}.</p>`);
+                });
+            
+                // Unit Converter
+                $('#unitConverter').submit(function(event) {
+                    event.preventDefault();
+                    const value = parseFloat($('#value').val());
+                    const fromUnit = $('#unitType').val();
+                    const toUnit = $('#convertTo').val();
+                    let convertedValue;
+            
+                    if (fromUnit === 'meters' && toUnit === 'kilometers') {
+                        convertedValue = value / 1000;
+                    } else if (fromUnit === 'kilometers' && toUnit === 'meters') {
+                        convertedValue = value * 1000;
+                    } else {
+                        convertedValue = value; // same unit
+                    }
+            
+                    $('#unitResult').html(`<p>${value} ${fromUnit} is equal to ${convertedValue} ${toUnit}.</p>`);
+                });
+            </script>
+        </div>
+        <div class="tab-pane fade" id="tab5">
+            
+        </div>
+    </div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
