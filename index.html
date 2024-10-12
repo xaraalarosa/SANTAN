@@ -168,7 +168,111 @@
             const lessons = {
                 'Mathematics': {
                     'Q1': [
-                        { title: 'Lesson 1', content: 'Introduction to Algebra' },
+                        { title: 'Lesson 1', content: `
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Song to Celia by Ben Jonson</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .poem {
+            font-style: italic;
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .vocabulary, .prosodic-features {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Lesson 1: Song to Celia by Ben Jonson</h1>
+
+    <p>Ben Jonson established himself as one of the towering figures of English literature. He made important contributions to stage comedy and English poetry. As a poet, he is known for his graceful and clear expression, his command in the use of wit, and his display of classical Greek and Latin learning.</p>
+
+    <div class="poem">
+        <p>Drink to me only with thine eyes<br>
+        And I will pledge with mine;<br>
+        Or leave a kiss but in the cup,<br>
+        And I'll not look for wine.<br>
+        The thirst that from the soul doth rise<br>
+        Doth ask a drink divine:<br>
+        But might I of Jove's nectar sup<br>
+        I would not change for thine.<br>
+        I sent thee late a rosy wreath,<br>
+        Not so much honouring thee<br>
+        As giving it a hope that there<br>
+        It could not withered be.<br>
+        But thou thereon didst only breathe<br>
+        And sent'st it back to me:<br>
+        Since, when it grows and smells,<br>
+        I swear,<br>
+        Not of itself but thee.</p>
+    </div>
+
+    <h2>Lyric Poem</h2>
+    <p>A kind of poem that is supposed to be sung with a musical instrument (usually a lyre in ancient times). It expresses intense emotions and the poet's thoughts, feelings, joys, sorrows, aspirations, or state of mind.</p>
+
+    <div class="vocabulary">
+        <h2>Vocabulary</h2>
+        <ul>
+            <li><strong>thine</strong> — yours</li>
+            <li><strong>doth</strong> — do/does</li>
+            <li><strong>jove</strong> — king of the gods</li>
+            <li><strong>sup</strong> — dine</li>
+            <li><strong>nectar</strong> — drink of the gods</li>
+            <li><strong>thereon</strong> — on the thing that has been mentioned</li>
+            <li><strong>thee</strong> — you</li>
+            <li><strong>wreath</strong> — a circular band of flowers</li>
+            <li><strong>didst</strong> — past tense of do</li>
+            <li><strong>sent’st</strong> — refers to the person addressed</li>
+        </ul>
+    </div>
+
+    <div class="prosodic-features">
+        <h2>Prosodic Features of Speech</h2>
+        <ul>
+            <li><strong>Stress</strong> — emphasis given to a syllable or word</li>
+            <li><strong>Intonation</strong> — the melodic pattern of speech or the rise and fall of speech to achieve rhythm</li>
+            <li><strong>Volume</strong> — loudness or softness of the sound</li>
+            <li><strong>Pause</strong> — temporary stop signaled by punctuation</li>
+            <li><strong>Tempo</strong> — speed or slowness of speech</li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+                        ` },
                         { title: 'Lesson 2', content: 'Fractions and Decimals' },
                         { title: 'Lesson 3', content: 'Basic Geometry' }
                     ],
@@ -305,6 +409,7 @@
             
                 <div class="tool-section">
                     <h3>Grade Calculator</h3>
+                    <p>Enter your PT/QUIZ/EXAM score and the total points</p>
                     <form id="gradeCalculator">
                         <div class="form-group">
                             <label for="totalPoints">Total Points:</label>
@@ -350,18 +455,19 @@
             
                 <div class="tool-section">
                     <h3>Currency Converter</h3>
+                    <p>*as of October 12, 2024*</p>
                     <form id="currencyConverter">
                         <div class="form-group">
-                            <label for="amount">Amount (USD):</label>
-                            <input type="number" class="form-control" id="amount" placeholder="Enter amount in USD" required>
+                            <label for="amount">Amount (PHP):</label>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter amount in PHP" required>
                         </div>
                         <div class="form-group">
                             <label for="currency">Convert to:</label>
                             <select class="form-control" id="currency">
+                                <option value="USD">US Dollar (USD)</option>
                                 <option value="EUR">Euro</option>
                                 <option value="GBP">British Pound</option>
                                 <option value="JPY">Japanese Yen</option>
-                                <option value="AUD">Australian Dollar</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Convert</button>
@@ -438,23 +544,24 @@
                     const currency = $('#currency').val();
                     let conversionRate = 1;
             
+                    // Example conversion rates
                     switch (currency) {
+                        case 'USD':
+                            conversionRate = 0.018; // 1 PHP = 0.018 USD
+                            break;
                         case 'EUR':
-                            conversionRate = 0.85;
+                            conversionRate = 0.017; // 1 PHP = 0.017 EUR
                             break;
                         case 'GBP':
-                            conversionRate = 0.75;
+                            conversionRate = 0.014; // 1 PHP = 0.014 GBP
                             break;
                         case 'JPY':
-                            conversionRate = 110.0;
-                            break;
-                        case 'AUD':
-                            conversionRate = 1.35;
+                            conversionRate = 2.43; // 1 PHP = 2.43 JPY
                             break;
                     }
             
                     const convertedAmount = amount * conversionRate;
-                    $('#currencyResult').html(`<p>${amount} USD is approximately ${convertedAmount.toFixed(2)} ${currency}.</p>`);
+                    $('#currencyResult').html(`<p>${amount} PHP is approximately ${convertedAmount.toFixed(2)} ${currency}.</p>`);
                 });
             
                 // Unit Converter
@@ -476,9 +583,52 @@
                     $('#unitResult').html(`<p>${value} ${fromUnit} is equal to ${convertedValue} ${toUnit}.</p>`);
                 });
             </script>
-        </div>
         <div class="tab-pane fade" id="tab5">
-            
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        .request-form {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Submit Your Request</h1>
+    <p>Your feedback and questions are important to us. Please fill out the form below anonymously:</p>
+
+    <div class="request-form">
+        <form id="nglForm" action="https://your-ngl-link-here" method="POST">
+            <div class="form-group">
+                <label for="request">Your Request/Question:</label>
+                <textarea class="form-control" id="request" name="request" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <h3>Why Use NGL?</h3>
+    <p>NGL allows you to submit your thoughts and questions anonymously, ensuring your privacy while enabling open communication.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
         </div>
     </div>
 </header>
