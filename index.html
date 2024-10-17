@@ -67,7 +67,7 @@
                    <style>
                             body {
                                 font-family: Arial, sans-serif;
-                                background-color: #f5f6f7; /* Light background */
+                                background-color: #d3963c; /* Light background */
                                 color: #333; /* Dark text color */
                                 padding: 20px;
                                 margin: 0; /* Remove default margins */
@@ -76,15 +76,6 @@
                             h2 {
                                 color: #3b5998; /* Facebook blue */
                                 margin-bottom: 10px;
-                            }
-                    
-                            .container {
-                                margin: 20px auto;
-                                max-width: 800px; /* Centering content */
-                                background: white; /* White background for the card */
-                                padding: 20px;
-                                border-radius: 8px; /* Rounded corners */
-                                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
                             }
                     
                             .announcement {
@@ -144,10 +135,6 @@
                             <h2>Announcements</h2>
                             <div class="announcement" id="announcement"></div>
                     
-                            <h2>Mission</h2>
-                            <p>To provide quality education that empowers students to reach their full potential.</p>
-                    
-                        
                         <h2>Mission</h2>
                         <p>Palawan State University is committed to upgrade people’s quality of life by providing education opportunities through excellent instruction, research and innovation, extension, production services, and transnational collaborations
 
@@ -353,8 +340,26 @@
                     <script>
         // Schedule for announcements
         const announcements = [
-            { date: '2024-10-13', text: 'Welcome back to school!' },
-            { date: '2024-10-15', text: 'Parent-Teacher Conference on October 20.' },
+        { date: '2024-10-13', text: 'Welcome back to school!' },
+{ date: '2024-10-15', text: 'Parent-Teacher Conference on October 20.' },
+{ date: '2024-08-23', text: 'HPTA & GPTA Meetings.' },
+{ date: '2024-09-01', text: 'SBG Election (TBA).' },
+{ date: '2024-09-24', text: '1st Quarterly Assessment.' },
+{ date: '2024-09-26', text: 'Start of Academic Quarter 2.' },
+{ date: '2024-10-14', text: '1st Quarter Awards and Recognition Day.' },
+{ date: '2024-11-19', text: '2nd Quarterly Assessment.' },
+{ date: '2024-11-21', text: 'Start of Academic Quarter 3.' },
+{ date: '2024-12-09', text: '2nd Quarter Awards and Recognition Day.' },
+{ date: '2024-12-19', text: 'Year-End Party.' },
+{ date: '2024-12-21', text: 'Christmas Break/Semestral Break starts.' },
+{ date: '2025-01-02', text: 'Resumption of Classes.' },
+{ date: '2025-01-28', text: '3rd Quarterly Assessment.' },
+{ date: '2025-01-30', text: 'Start of Academic Quarter 4.' },
+{ date: '2025-02-20', text: 'School\'s Prom.' },
+{ date: '2025-02-24', text: '3rd Quarter Awards and Recognition Day.' },
+{ date: '2025-03-18', text: '4th Quarterly Assessment.' },
+{ date: '2025-04-01', text: 'Awards and Recognition Day.' },
+{ date: '2025-04-10', text: 'Recollection Activity.' }
         ];
 
         const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
@@ -2093,7 +2098,6 @@ style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
        body {
-            margin: 20px;
             font-family: Arial, sans-serif; /* Added font style */
             background-color: #f8f9fa; /* Light background color */
         }
@@ -2121,9 +2125,113 @@ style>
     <iframe src="https://ngl.link/santansecrets" title="NGL Link"></iframe>
 </div>
     <hr>
+<div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .playlist {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .playlist img {
+            width: 150px;
+            height: 150px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .playlist img:hover {
+            transform: scale(1.05);
+            transition: 0.3s ease-in-out;
+        }
+        .songs {
+            display: none;
+        }
+        .songs.active {
+            display: block;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .song-item {
+            margin: 5px 0;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .song-item:hover {
+            text-decoration: underline;
+        }
+        audio {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
 
-    <h3>Why Use NGL?</h3>
-    <p>NGL allows you to submit your thoughts and questions anonymously, ensuring your privacy while enabling open communication.</p>
+<div class="container">
+    <h1>Music Carousel</h1>
+
+    <div class="playlist">
+        <img src="playlist1.jpg" alt="Playlist 1" onclick="showSongs('playlist1')">
+        <img src="playlist2.jpg" alt="Playlist 2" onclick="showSongs('playlist2')">
+        <img src="playlist3.jpg" alt="Playlist 3" onclick="showSongs('playlist3')">
+    </div>
+
+    <div id="playlist1" class="songs">
+        <div class="song-item" onclick="playSong('song1.mp3')">Song 1 - Artist A</div>
+        <div class="song-item" onclick="playSong('song2.mp3')">Song 2 - Artist B</div>
+        <div class="song-item" onclick="playSong('song3.mp3')">Song 3 - Artist C</div>
+    </div>
+
+    <div id="playlist2" class="songs">
+        <div class="song-item" onclick="playSong('song4.mp3')">Song 4 - Artist D</div>
+        <div class="song-item" onclick="playSong('song5.mp3')">Song 5 - Artist E</div>
+        <div class="song-item" onclick="playSong('song6.mp3')">Song 6 - Artist F</div>
+    </div>
+
+    <div id="playlist3" class="songs">
+        <div class="song-item" onclick="playSong('song7.mp3')">Song 7 - Artist G</div>
+        <div class="song-item" onclick="playSong('song8.mp3')">Song 8 - Artist H</div>
+        <div class="song-item" onclick="playSong('song9.mp3')">Song 9 - Artist I</div>
+    </div>
+
+    <audio id="audioPlayer" controls>
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+    function showSongs(playlistId) {
+        const playlists = document.querySelectorAll('.songs');
+        playlists.forEach(playlist => playlist.classList.remove('active'));
+        document.getElementById(playlistId).classList.add('active');
+    }
+
+    function playSong(songSrc) {
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.src = songSrc;
+        audioPlayer.play();
+    }
+</script>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
